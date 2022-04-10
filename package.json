@@ -1,0 +1,21 @@
+{
+  "name": "@alexcarpenter/use-wrapping-index",
+  "version": "0.1.0",
+  "description": "Useful for managing a wrapping index for an array of items.",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle -i index.ts",
+    "dev": "microbundle -i index.ts watch"
+  },
+  "author": "Alex Carpenter",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.14.2",
+    "react": "^18.0.0"
+  }
+}

@@ -17,7 +17,7 @@ function App() {
     moveToPreviousIndex,
     moveToNextIndex,
   } = useWrappingIndex({
-    maxIndex = sampleData.length,
+    maxIndex: sampleData.length,
   });
 
   return (

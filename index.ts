@@ -47,7 +47,7 @@ export default function useWrappingIndex({
      */
     activeIndex,
     /**
-     * The current next inde
+     * The current next index.
      */
     nextIndex: getNextIndex(activeIndex + 1),
     /**

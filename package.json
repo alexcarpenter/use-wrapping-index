@@ -1,13 +1,15 @@
 {
   "name": "@alexcarpenter/use-wrapping-index",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Useful for managing a wrapping index for an array of items.",
+  "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
     "build": "microbundle -i index.ts",
-    "dev": "microbundle -i index.ts watch"
+    "dev": "microbundle -i index.ts watch",
+    "test": "npm run build && jest --watch"
   },
   "author": "Alex Carpenter",
   "license": "MIT",
@@ -15,8 +17,13 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@testing-library/react-hooks": "^8.0.0",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
     "microbundle": "^0.14.2",
-    "react": "^18.0.0"
+    "react": "^16.14.0",
+    "react-test-renderer": "^16.14.0"
   },
   "repository": {
     "type": "git",

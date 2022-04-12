@@ -12,7 +12,34 @@ export default function useWrappingIndex({
    * The maximum index to allow.
    */
   maxIndex: number;
-}) {
+}): {
+  /**
+   * The current active index.
+   */
+  activeIndex: number;
+  /**
+   * The current next index.
+   */
+  nextIndex: number;
+  /**
+   * The current previous index.
+   */
+  previousIndex: number;
+  /**
+   * Moves the active index to the speficied index.
+   */
+  setActiveIndex: (index: number) => void;
+  /**
+   * Moves to the next index.
+   * @see nextIndex
+   */
+  moveToNextIndex: () => void;
+  /**
+   * Moves to the previous index.
+   * @see previousIndex
+   */
+  moveToPreviousIndex: () => void;
+} {
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
   const getNextIndex = useCallback(
@@ -42,31 +69,11 @@ export default function useWrappingIndex({
   );
 
   return {
-    /**
-     * The current active index.
-     */
     activeIndex,
-    /**
-     * The current next index.
-     */
     nextIndex: getNextIndex(activeIndex + 1),
-    /**
-     * The current previous index.
-     */
     previousIndex: getNextIndex(activeIndex - 1),
-    /**
-     * Moves the active index to the speficied index.
-     */
     setActiveIndex,
-    /**
-     * Moves to the next index.
-     * @see nextIndex
-     */
     moveToNextIndex,
-    /**
-     * Moves to the previous index.
-     * @see previousIndex
-     */
     moveToPreviousIndex,
   };
 }

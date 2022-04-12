@@ -1,8 +1,8 @@
 {
   "name": "@alexcarpenter/use-wrapping-index",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Useful for managing a wrapping index for an array of items.",
-  "types": "dist/index.d.ts",
+  "types": "index.d.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",

@@ -9,6 +9,15 @@ describe("useWrappingIndex", () => {
     expect(result.current.activeIndex).toBe(3);
   });
 
+  it("should wrap the index when it exceeds the maxIndex", () => {
+    const { result } = renderHook(() => useWrappingIndex({ maxIndex: 2 }));
+    expect(result.current.activeIndex).toBe(0);
+    act(() => result.current.moveToNextIndex());
+    expect(result.current.activeIndex).toBe(1);
+    act(() => result.current.moveToNextIndex());
+    expect(result.current.activeIndex).toBe(0);
+  });
+
   it("should set active index", () => {
     const { result } = renderHook(() =>
       useWrappingIndex({ maxIndex: 5, defaultIndex: 3 })
